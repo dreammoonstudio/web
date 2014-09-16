@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import flash as f
 from flask.ext.script import Manager
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
@@ -35,3 +36,7 @@ def create_app(config_name):
 	app.register_blueprint(main_blueprint)
 
 	return app
+
+# global functions
+def flash(flag, message):
+	f(flag + '/' + message);
