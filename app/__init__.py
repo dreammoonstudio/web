@@ -38,5 +38,8 @@ def create_app(config_name):
 	return app
 
 # global functions
-def flash(flag, message):
-	f(flag + '/' + message);
+def flash(message="", flag=False):
+	if flag:
+		f(flag + '/' + message);
+	else:
+		f(message);

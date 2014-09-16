@@ -7,13 +7,14 @@ from flask.ext.babel import gettext as _
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
-    name = None
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')
         if old_name is not None and old_name != form.name.data:
             flash(_('Looks like you have changed your name'))
-    return render_template('index.html', form=form, name=name)
+        session['name'] = form.name.data
+    form.name.data = ''
+    return render_template('index.html', form=form, name=session['name'])
 
 @main.route('/user/<username>')
 def user(username):
