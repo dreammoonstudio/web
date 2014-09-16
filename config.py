@@ -40,9 +40,9 @@ class ProductionConfig(Config):
         'sqlite:///' + os.path.join(BASE_DIR, 'data.sqlite')
 
 config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig,
-    'production': ProductionConfig,
+    'dev': DevelopmentConfig,
+    'test': TestingConfig,
+    'deploy': ProductionConfig,
     'default': DevelopmentConfig
 }
 
