@@ -14,7 +14,7 @@ def index():
             flash(_('Looks like you have changed your name'))
         session['name'] = form.name.data
     form.name.data = ''
-    return render_template('index.html', form=form, name=session['name'])
+    return render_template('index.html', form=form, name=session.get('name'))
 
 @main.route('/user/<username>')
 def user(username):
