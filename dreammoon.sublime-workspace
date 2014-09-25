@@ -1,0 +1,918 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pas",
+				"password_reentery"
+			],
+			[
+				"Pas",
+				"PasswordField"
+			],
+			[
+				"Ema",
+				"Email"
+			],
+			[
+				"Emai",
+				"EmailField"
+			],
+			[
+				"login",
+				"login_required"
+			],
+			[
+				"name",
+				"name=  (attribute)"
+			],
+			[
+				"re",
+				"register_blueprint"
+			],
+			[
+				"log",
+				"login_required"
+			],
+			[
+				"fl",
+				"flash"
+			],
+			[
+				"wtf",
+				"wtforms"
+			],
+			[
+				"User",
+				"UserMixin"
+			],
+			[
+				"auth",
+				"auth_blueprint"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"passw",
+				"password_hash"
+			],
+			[
+				"con",
+				"config_name"
+			],
+			[
+				"conf",
+				"config_name"
+			],
+			[
+				"pro",
+				"production"
+			],
+			[
+				"en",
+				"environ"
+			],
+			[
+				"l",
+				"li	Tag"
+			],
+			[
+				"HTTP",
+				"HttpResponseRedirect"
+			],
+			[
+				"HTTp",
+				"HttpResponse"
+			],
+			[
+				"HTT",
+				"HttpResponse"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"conte",
+				"context_dict"
+			],
+			[
+				"render",
+				"render_to_response"
+			],
+			[
+				"categor",
+				"categories"
+			],
+			[
+				"cate",
+				"category"
+			],
+			[
+				"url",
+				"url"
+			],
+			[
+				"regis",
+				"registered"
+			],
+			[
+				"profile",
+				"profile_form"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"w",
+				"widget"
+			],
+			[
+				"Model",
+				"ModelForm	ModelForm"
+			],
+			[
+				"contex",
+				"context_dict"
+			],
+			[
+				"category",
+				"category_name"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"Re",
+				"RequestContext"
+			],
+			[
+				"te",
+				"template"
+			],
+			[
+				"al",
+				"alt	Attr"
+			],
+			[
+				"TEMPLA",
+				"TEMPLATE_PATH"
+			],
+			[
+				"fo",
+				"footer	Tag"
+			],
+			[
+				"mi",
+				"min-height"
+			],
+			[
+				"nam",
+				"name_english"
+			],
+			[
+				"na",
+				"name_english"
+			],
+			[
+				"pre",
+				"present_company_id"
+			],
+			[
+				"Ca",
+				"Category"
+			],
+			[
+				"ge",
+				"genres"
+			],
+			[
+				"com",
+				"companies"
+			],
+			[
+				"pr",
+				"primary_key"
+			],
+			[
+				"c",
+				"class	Attr"
+			],
+			[
+				"get_",
+				"get_all"
+			],
+			[
+				"for",
+				"form	Tag"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"borde",
+				"border"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"pagin",
+				"pagnition"
+			],
+			[
+				"str",
+				"strip"
+			],
+			[
+				"li",
+				"linkify"
+			],
+			[
+				"body",
+				"body_html"
+			],
+			[
+				"__",
+				"__tablename__"
+			],
+			[
+				"ass",
+				"assertFalse"
+			],
+			[
+				"em",
+				"example"
+			],
+			[
+				"Fo",
+				"FOLLOW"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/auth/forms.py",
+			"settings":
+			{
+				"buffer_size": 1351,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/auth/models.py",
+			"settings":
+			{
+				"buffer_size": 1273,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/auth/views.py",
+			"settings":
+			{
+				"buffer_size": 1079,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/youhaowei/Dropbox/DreamMoon",
+		"/Users/youhaowei/Dropbox/DreamMoon/app",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/auth",
+		"/Users/youhaowei/Dropbox/DreamMoon/tests"
+	],
+	"file_history":
+	[
+		"/Users/youhaowei/Dropbox/DreamMoon/app/main/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/index.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/pip/_vendor/html5lib/filters/inject_meta_charset.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/manage.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/auth/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/auth/login.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/macros.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/base.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/include/python2.7/listobject.h",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/genericpath.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/main/errors.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/data-dev.sqlite",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/main/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/auth/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/requirments.txt",
+		"/Users/youhaowei/Dropbox/DreamMoon/tests/test_user_model.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/auth/models.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/auth/forms.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/tests/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/pip/__main__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/email.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/migrations/alembic.ini",
+		"/Users/youhaowei/Dropbox/DreamMoon/tests/test_basic.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/config.py",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/include/python2.7/descrobject.h",
+		"/Users/youhaowei/Dropbox/DreamMoon/README.md",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/encodings/mac_iceland.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/error.html",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/bin/activate",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/pip/_vendor/requests/api.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/encodings/mac_arabic.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/pip/_vendor/colorama/initialise.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/setuptools/command/install_egg_info.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/encodings/idna.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/include/python2.7/warnings.h",
+		"/Users/youhaowei/Dropbox/DreamMoon/venv/lib/python2.7/site-packages/setuptools/version.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/.idea/django.iml",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/templates/index.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/DreamMoon/urls.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/blog/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/DreamMoon/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/blog/urls.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/blog/forms.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/models.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/templates/blog/categories.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/templates/user/register.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/urls.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/forms.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/templates/blog/category.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/auth/models.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/DreamMoon/settings.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/user/admin.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/blog/models.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/auth/admin.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/.idea/vcs.xml",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/blog/admin.py",
+		"/Users/youhaowei/Downloads/favicon.ico",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/home/views.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/django/home/urls.py",
+		"/Users/youhaowei/Desktop/README.txt",
+		"/private/var/folders/jn/y8grdf8d5sq3n40s8_6wjlsw0000gn/T/c2cd543d-fbe0-4d21-85c4-a4bd6e2d62c4/var/www/html/index.html",
+		"/private/var/folders/jn/y8grdf8d5sq3n40s8_6wjlsw0000gn/T/98cfd373-f440-40fe-9d85-3601ce534c16/home/ubuntu/DreamMoon/app/templates/login.html",
+		"/private/var/folders/jn/y8grdf8d5sq3n40s8_6wjlsw0000gn/T/98cfd373-f440-40fe-9d85-3601ce534c16/home/ubuntu/DreamMoon/app/templates/base.html",
+		"/Users/youhaowei/Dropbox/Orange/app/static/styles.css",
+		"/Users/youhaowei/Key/ips",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/User/Distraction Free.sublime-settings",
+		"/Users/youhaowei/Desktop/return",
+		"/Users/youhaowei/Downloads/kp.cer",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/youhaowei/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/youhaowei/Desktop/DreamCinema/manager.py",
+		"/Users/youhaowei/Desktop/Orange/babel.cfg",
+		"/Users/youhaowei/Desktop/Orange/app/forms.py",
+		"/Users/youhaowei/Desktop/Orange/app/email.py",
+		"/Users/youhaowei/Desktop/Orange/app/statics/styles.css",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/forum/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/blog/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/admin/__init__.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/babel.cfg",
+		"/Users/youhaowei/Dropbox/DreamMoon/manager.py",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/edit_profile.html",
+		"/Users/youhaowei/Dropbox/DreamMoon/app/templates/blog/edit_post.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"current",
+			"indent",
+			"TEMPLATE_DIR",
+			"page"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/auth/forms.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1351,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1351,
+								1351
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 6.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "app/auth/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1273,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								363,
+								363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/auth/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								265,
+								225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "dreammoon.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"views",
+				"app/auth/views.py"
+			],
+			[
+				"models",
+				"app/auth/models.py"
+			],
+			[
+				"forms",
+				"app/auth/forms.py"
+			],
+			[
+				"base",
+				"app/templates/base.html"
+			],
+			[
+				"index",
+				"app/templates/index.html"
+			],
+			[
+				"login",
+				"app/templates/auth/login.html"
+			],
+			[
+				"idnex",
+				"app/templates/index.html"
+			],
+			[
+				"__init",
+				"app/auth/__init__.py"
+			],
+			[
+				"main.",
+				"app/main/__init__.py"
+			],
+			[
+				"init",
+				"app/__init__.py"
+			],
+			[
+				"model",
+				"app/auth/models.py"
+			],
+			[
+				"__in",
+				"app/__init__.py"
+			],
+			[
+				"mana",
+				"manage.py"
+			],
+			[
+				"con",
+				"config.py"
+			],
+			[
+				"test",
+				"tests/test_email.py"
+			],
+			[
+				"co",
+				"config.py"
+			],
+			[
+				"config",
+				"config.py"
+			],
+			[
+				"mail",
+				"app/email.py"
+			],
+			[
+				"in",
+				"app/__init__.py"
+			],
+			[
+				"c",
+				"config.py"
+			],
+			[
+				"__i",
+				"app/__init__.py"
+			],
+			[
+				"mnaa",
+				"manage.py"
+			],
+			[
+				"view",
+				"app/main/views.py"
+			],
+			[
+				"conf",
+				"config.py"
+			],
+			[
+				"inde",
+				"app/templates/index.html"
+			],
+			[
+				"vews",
+				"app/main/views.py"
+			],
+			[
+				"error",
+				"app/main/errors.py"
+			],
+			[
+				"urls",
+				"user/urls.py"
+			],
+			[
+				"url",
+				"blog/urls.py"
+			],
+			[
+				"user/views",
+				"user/views.py"
+			],
+			[
+				"ad",
+				"auth/admin.py"
+			],
+			[
+				"movi",
+				"app/templates/movie.html"
+			],
+			[
+				"mode",
+				"app/models.py"
+			],
+			[
+				"blo",
+				"app/models/blog.py"
+			],
+			[
+				"user",
+				"app/models/user.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dropbox/DreamMoon/app/auth/models.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

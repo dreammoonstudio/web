@@ -1,4 +1,4 @@
-{% extend "base.html" %}
+{% extends "base.html" %}
 
 {% block title %}
 User - Dream Moon Studio
@@ -6,6 +6,9 @@ User - Dream Moon Studio
 
 {% block page %}
 <div class="page-header">
-	<h1>Hello, {{ username }}</h1>
+	<h1>Hello, {{ user.username }}</h1>
+    {% if not user.confirmed %}
+    You have not confirmed your account yet, you can click <a href="{{url_for('auth.resend_confirmation')}}">here</a> to resend the confirmation email.
+    {% endif %}
 </div>
 {% endblock %}

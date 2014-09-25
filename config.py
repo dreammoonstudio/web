@@ -38,13 +38,19 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        ('mysql://dreammoon:' + "Meow123456!" + "@dreammoon.cnifeyyizjti.us-west-1.rds.amazonaws.com/dreammoon")
+        ('mysql://dreammoon:' + os.environ.get("DM_DB_PASSWORD") + "@dreammoon.cnifeyyizjti.us-west-1.rds.amazonaws.com/dreammoon")
+
+class AlphaTestConfig(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        ('mysql://dreammoon:' + os.environ.get("DM_DB_PASSWORD") + "@dreammoon.cnifeyyizjti.us-west-1.rds.amazonaws.com/dreammoon")
 
 config = {
     'dev': DevelopmentConfig,
     'test': TestingConfig,
     'deploy': ProductionConfig,
-    'default': DevelopmentConfig
+    'default': DevelopmentConfig,
+    'alpha': AlphaTestConfig
 }
 
 LANGUAGES = {

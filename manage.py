@@ -10,7 +10,7 @@ from flask.ext.migrate import Migrate, MigrateCommand
 Which config mode do you want?
 valid options: 'development'|'production'|'test'
 """
-config_name = "default"
+config_name = os.environ.get("DM_CONFIG") or "default"
 
 app = create_app(config_name)
 manager = Manager(app)

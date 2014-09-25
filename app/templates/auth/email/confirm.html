@@ -1,0 +1,15 @@
+Dear <strong>{{ user.username }}</strong>,
+
+Welcome to the community of Dream Moon Studio!
+
+To confirm your account, please click on the following link:
+
+<a href="{{ url_for('auth.confirm', token=token, _external=True) }}">{{ url_for('auth.confirm', token=token, _external=True) }}</a>
+
+Again, we are very happy to have you join our community.
+
+Sincerely,
+
+The Team of <a href="http://www.dreammoonstudio.com">Dream Moon Studio</a>
+
+Note: If you have any question, feel free to email back this address.

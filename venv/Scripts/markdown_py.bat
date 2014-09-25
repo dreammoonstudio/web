@@ -1,0 +1,1 @@
+@"C:\Users\chari_000\Dropbox\DreamMoon\venv\Scripts\python.exe" "C:\Users\chari_000\Dropbox\DreamMoon\venv\Scripts\markdown_py" %*

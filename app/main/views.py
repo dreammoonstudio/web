@@ -4,6 +4,7 @@ from . import main
 from .forms import NameForm
 from .. import flash
 from flask.ext.babel import gettext as _
+from app.auth.models import User
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
@@ -18,5 +19,6 @@ def index():
 
 @main.route('/user/<username>')
 def user(username):
-    return render_template('user.html', name=username)
+    user = User.query.filter_by(username=username).first()
+    return render_template('user.html', user=user)
 
