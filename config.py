@@ -1,9 +1,12 @@
 import os
+import configparser
 
+config = configparser.RawConfigParser()
+config.read("setting.cfg")
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-    SECRET_KEY = os.environ.get('SECCRET_KEY') or 'this-is-a-temporary-secret-key'
+    SECRET_KEY = config.get('DM', 'SECRET_KEY')
     
     # SQLAlchemy
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
@@ -11,12 +14,12 @@ class Config:
     # mail
     DM_MAIL_SUBJECT_PREFIX = '[Dream Moon Studio]'
     DM_MAIL_SENDER = 'Dream Moon Admin <admin@dreammoonstudio.com>'
-    DM_ADMIN = os.environ.get('DM_ADMIN')
+    DM_ADMIN = "Dream Moon Admin"
 
-    MAIL_SERVER = "smtpout.secureserver.net"
-    MAIL_PORT = 465
-    MAIL_USERNAME = os.environ.get('DM_MAIL_USERNAME')
-    MAIL_PASSWORD = os.environ.get('DM_MAIL_PASSWORD')
+    MAIL_SERVER = config.get('DM', 'EMAIL_SERVER')
+    MAIL_PORT = config.get('DM', 'EMAIL_PORT')
+    MAIL_USERNAME = config.get('DM', 'EMAIL_USERNAME')
+    MAIL_PASSWORD = config.get('DM', 'EMAIL_PASSWORD')
 
     MAIL_USE_SSL = True
 
@@ -37,13 +40,12 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        ('mysql://dreammoon:' + os.environ.get("DM_DB_PASSWORD") + "@dreammoon.cnifeyyizjti.us-west-1.rds.amazonaws.com/dreammoon")
+   SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
+        'sqlite:///' + os.path.join(BASE_DIR, 'data-pro.sqlite')
 
 class AlphaTestConfig(Config):
-    DEBUG = True
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        ('mysql://dreammoon:' + os.environ.get("DM_DB_PASSWORD") + "@dreammoon.cnifeyyizjti.us-west-1.rds.amazonaws.com/dreammoon")
+    SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
+        'sqlite:///' + os.path.join(BASE_DIR, 'alpha-test.sqlite')
 
 config = {
     'dev': DevelopmentConfig,
