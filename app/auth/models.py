@@ -20,8 +20,8 @@ class Role(db.Model):
                      Permission.COMMENT |
                      Permission.CREATE_POST, False),
             'Advanced User': (0x00f | Permission.CREATE_PAGE |
-                              Permission.CREATE_TOPIC, False)
-            'Moderator': (0x0ff, False)
+                              Permission.CREATE_TOPIC, False),
+            'Moderator': (0x0ff, False),
             'Administer': (0xfff, False)
         }
         for r in roles:
