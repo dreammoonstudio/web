@@ -50,6 +50,7 @@
       </div>
       <form method="post" class="form" role="form" action="{{url_for("auth.login")}}">
 	      <div class="modal-body">
+	      <div style="display:none;"><input id="csrf_token" name="csrf_token" type="hidden" value="1414458607.8413491##184d9188371e149313c72ad44f2183b6dfc49846"></div>
 	        <div class="form-group">
 	        	<label class="control-label" for="email_or_username">{{_("Email/Username")}}</label>
 	        	<input class="form-control" id="email_or_username" name="email_or_username" type="text">
