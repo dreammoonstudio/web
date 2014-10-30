@@ -1,5 +1,5 @@
 *.cpython-34.pyc
-__pycache__/*
+*/__pycache__/*
 migrations/*
 *.pyc
 *.sqlite3
@@ -7,3 +7,5 @@ migrations/*
 *.cfg
 
 setting.cfg
+
+data-dev.sqlite

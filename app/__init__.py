@@ -8,6 +8,7 @@ from flask.ext.mail import Mail
 from flask.ext.babel import Babel
 from flask.ext.login import LoginManager
 from flask.ext.pagedown import PageDown
+from flask_wtf.csrf import CsrfProtect
 from config import config
 
 login_manager = LoginManager()
@@ -19,6 +20,7 @@ moment = Moment()
 mail = Mail()
 babel = Babel()
 pagedown = PageDown()
+csrf = CsrfProtect()
 
 def create_app(config_name):
 	app = Flask(__name__)
@@ -31,6 +33,7 @@ def create_app(config_name):
 	babel.init_app(app)
 	login_manager.init_app(app)
 	pagedown.init_app(app)
+	csrf.init_app(app)
 
 	from app.main import main as main_blueprint
 	app.register_blueprint(main_blueprint)

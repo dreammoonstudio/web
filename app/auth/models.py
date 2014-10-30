@@ -80,7 +80,7 @@ class User(db.Model, UserMixin):
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
         if self.role is None:
-            if self.email == current_app.config('DM_ADMIN'):
+            if self.email == current_app.config['DM_ADMIN']:
                 self.role = Role.query.filter_by(permissions=0xfff).first()
             else:
                 self.role = Role.query.filter_by(default=True).first()
