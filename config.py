@@ -14,7 +14,7 @@ class Config:
     # mail
     DM_MAIL_SUBJECT_PREFIX = '[Dream Moon Studio]'
     DM_MAIL_SENDER = 'Dream Moon Admin <admin@dreammoonstudio.com>'
-    DM_ADMIN = "Dream Moon Admin"
+    DM_ADMIN = 'admin@dreammoonstudio.com'
 
     MAIL_SERVER = config.get('DM', 'EMAIL_SERVER')
     MAIL_PORT = config.get('DM', 'EMAIL_PORT')
