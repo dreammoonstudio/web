@@ -7,3 +7,5 @@ migrations/*
 *.cfg
 
 setting.cfg
+
+data-dev.sqlite
