@@ -1,11 +1,14 @@
 *.cpython-34.pyc
 */__pycache__/*
 migrations/*
-*.pyc
 *.sqlite3
 
+# ignore all config files
 *.cfg
 
 setting.cfg
+
+# ignore all pyc files
+*.pyc
 
 data-dev.sqlite
