@@ -4,7 +4,7 @@ from . import main
 from .forms import NameForm
 from .. import flash
 from flask.ext.babel import gettext as _
-from app.auth.models import User
+from app.models.user import User
 
 @main.route('/', methods=['GET', 'POST'])
 def index():

@@ -3,7 +3,7 @@ from ..email import send_email
 from app import flash, db
 from flask.ext.login import login_user, login_required, logout_user, current_user
 from . import auth
-from .models import User
+from app.models.user import User
 from .forms import LoginForm, RegisterForm
 from flask.ext.babel import gettext as _
 
