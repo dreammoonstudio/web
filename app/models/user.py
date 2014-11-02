@@ -8,11 +8,33 @@ class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
+    default = db.Column(db.Boolean, default=False, index=True)
+    permissions = db.Column(db.Integer)
     users = db.relationship('User', backref='role', lazy='dynamic')
+
+    @staticmethod
+    def insert_roles():
+        roles = {
+            'Newbie': (Permission.FOLLOW, True),
+            'User': (Permission.FOLLOW |
+                     Permission.COMMENT |
+                     Permission.CREATE_POST, False),
+            'Advanced User': (0x00f | Permission.CREATE_PAGE |
+                              Permission.CREATE_TOPIC, False),
+            'Moderator': (0x0ff, False),
+            'Administer': (0xfff, False)
+        }
+        for r in roles:
+            role = Role.query.filter_by(name=r).first()
+            if role is None:
+                role = Role(name=r)
+            role.permissions = roles[r][0]
+            role.default = role[r][1]
+            db.session.add(role)
+        db.session.commit()
 
     def __repr__(self):
         return '<Role %r>' % self.name
-
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -35,7 +57,7 @@ class User(db.Model, UserMixin):
             return False
         if data.get('confirm') != self.id:
             return False
-        self.confirm = True
+        self.confirmed = True
         db.session.add(self)
         return True
 
@@ -54,6 +76,25 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return '<User %r>' % self.username
 
+    def __init__(self, **kwargs):
+        super(User, self).__init__(**kwargs)
+        if self.role is None:
+            if self.email == current_app.config['DM_ADMIN']:
+                self.role = Role.query.filter_by(permissions=0xfff).first()
+            else:
+                self.role = Role.query.filter_by(default=True).first()
+
 @login_manager.user_loader
 def login_user(user_id):
     return User.query.get(int(user_id))
+
+class Permission:
+    FOLLOW = 0x001
+    COMMENT = 0x002
+    CREATE_POST = 0x004
+    CREATE_PAGE = 0x008
+    CREATE_TOPIC = 0x010
+    MODERATE_COMMENTS = 0x020
+    MODERATE_USER = 0x040
+    MODERATE_BLOG = 0x080
+    ADMIN = 0x800

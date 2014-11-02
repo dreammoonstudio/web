@@ -4,7 +4,7 @@ from wtforms import ValidationError
 from wtforms.validators import Required, Email, Length, Regexp, EqualTo
 from wtforms.fields.html5 import EmailField
 from flask.ext.babel import gettext as _
-from .models import User
+from app.models.user import User
 
 class LoginForm(Form):
     email_or_username = StringField(_('Email/Username'), validators=[Required(),Length(1,64)])

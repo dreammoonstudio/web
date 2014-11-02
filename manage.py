@@ -5,12 +5,15 @@ from app import create_app, db
 #from app.models import User, Role
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
+import configparser
 
 """
 Which config mode do you want?
 valid options: 'development'|'production'|'test'
 """
-config_name = os.environ.get("DM_CONFIG") or "default"
+config = configparser.RawConfigParser()
+config.read("setting.cfg")
+config_name = config.get('DM', 'mode');
 
 app = create_app(config_name)
 manager = Manager(app)

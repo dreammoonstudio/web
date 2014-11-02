@@ -3,7 +3,7 @@ from ..email import send_email
 from app import flash, db
 from flask.ext.login import login_user, login_required, logout_user, current_user
 from . import auth
-from .models import User
+from app.models.user import User
 from .forms import LoginForm, RegisterForm
 from flask.ext.babel import gettext as _
 
@@ -30,7 +30,7 @@ def logout():
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
-    form = RegisterForm()
+    form = RegisterForm();
     if form.validate_on_submit():
         user = User(email=form.email.data, username=form.username.data,
             password=form.password.data)
@@ -50,7 +50,7 @@ def confirm(token):
     if current_user.confirm(token):
         flash(_("You have confirmed your account. Thanks!"), 's')
     else:
-        flash(_("The confirmation link is invalid or has expired. click <a>here</a> to resend the link"), 'd')
+        flash(_("The confirmation link is invalid or has expired. click <a href='{{url_for('auth.resend_confirmation'}}'>here</a> to resend the link"), 'd')
     return redirect(url_for('main.index'))
 
 @auth.route('/confirm')

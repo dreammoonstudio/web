@@ -1,7 +1,8 @@
-*.cpython-34.pyc
-__pycache__/*
-migrations/*
-*.pyc
-*.sqlite3
+**/*.pyc
+**/__pycache__/*
+**/**/__pycache__/*.*.*
 
-*.cfg
+# ignore sqlite database files
+*.sqlite
+*
+*.ini
