@@ -12,3 +12,9 @@ setting.cfg
 *.pyc
 
 data-dev.sqlite
+
+app/main/__pycache__/__init__.cpython-34.pyc
+
+app/main/__pycache__/errors.cpython-34.pyc
+
+app/main/__pycache__/forms.cpython-34.pyc

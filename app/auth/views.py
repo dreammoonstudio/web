@@ -50,7 +50,7 @@ def confirm(token):
     if current_user.confirm(token):
         flash(_("You have confirmed your account. Thanks!"), 's')
     else:
-        flash(_("The confirmation link is invalid or has expired. click <a>here</a> to resend the link"), 'd')
+        flash(_("The confirmation link is invalid or has expired. click <a href='{{url_for('auth.resend_confirmation'}}'>here</a> to resend the link"), 'd')
     return redirect(url_for('main.index'))
 
 @auth.route('/confirm')
