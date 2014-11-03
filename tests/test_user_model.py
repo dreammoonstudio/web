@@ -59,3 +59,9 @@ class UserModelTestCase(unittest.TestCase):
         token = u.generate_confirmation_token(1)
         time.sleep(2)
         self.assertFalse(u.confirm(token))
+
+    def test_roles_and_permissions(self):
+        Role.insert_roles()
+        u = User(email="john@example.com", password='cat')
+        self.assertTrue(u.can(Permission.FOLLOW))
+        self.assertFalse(u.can(Permission.MODERATE_COMMENTS))
