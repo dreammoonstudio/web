@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask.ext.login import UserMixin
 from flask import current_app
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+import datetime
 
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -11,6 +12,19 @@ class Role(db.Model):
     default = db.Column(db.Boolean, default=False, index=True)
     permissions = db.Column(db.Integer)
     users = db.relationship('User', backref='role', lazy='dynamic')
+    first_name = db.Column(db.String(64))
+    last_name = db.Column(db.String(64))
+    address = db.Column(db.String(128))
+    about_me = db.Column(db.Text())
+    memeber_since = db.Column(db.DateTime(), default=datetime.utcnow)
+    last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
+    is_male = db.Column(db.Boolean)
+    is_single = db.Column(db.Boolean)
+    is_married = db.Column(db.Boolean)
+
+    def ping(self):
+        self.last_seen = datetime.utcnow()
+        db.session.add(self)
 
     @staticmethod
     def insert_roles():
@@ -72,6 +86,24 @@ class User(db.Model, UserMixin):
 
     def verify_password(self, password):
         return check_password_hash(self.password_hash, password)
+
+    def get_name(self):
+        # use first name if given
+        if self.first_name:
+            return self.first_name
+        elif self.last_name:
+            if self.is_male:
+                return "Mr " + self.last_name
+            elif self.is_male is False:
+                if self.is_married:
+                    return "Mrs " + self.last_name
+                else:
+                    return "Ms" + self.last_name
+            else:
+                return self.last_name
+        # use username when no name info are given
+        return self.username
+
 
     def __repr__(self):
         return '<User %r>' % self.username
