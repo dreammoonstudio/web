@@ -1,6 +1,6 @@
 from app import db, login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask.ext.login import UserMixin
+from flask.ext.login import UserMixin, AnonymousUserMixin
 from flask import current_app
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 import datetime
@@ -104,6 +104,12 @@ class User(db.Model, UserMixin):
         # use username when no name info are given
         return self.username
 
+    def can(self, permissions):
+        return self.role is not None and \
+            (self.role.permissions & permissions) == permissions
+
+    def is_admin(self):
+        return self.can(Permission.ADMIN)
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -116,6 +122,14 @@ class User(db.Model, UserMixin):
             else:
                 self.role = Role.query.filter_by(default=True).first()
 
+class AnonymousUser(AnonymousUserMixin):
+    def can():
+        return False;
+
+    def is_admin():
+        return False
+
+login_manager.anoymous_user = AnonymousUser
 @login_manager.user_loader
 def login_user(user_id):
     return User.query.get(int(user_id))
