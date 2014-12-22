@@ -2,11 +2,24 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block head %}
-<title>{% block title %}{% endblock %}Dream Moon Studio</title>
+<title>{% block title %}{% endblock %}{{ _("NubiByte") }}</title>
+<!-- customized css -->
+{% if current_user.theme %}
+<!-- customized theme not supported yet
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/{{ current_user.theme.filename }}')}}"> -->
+{% else %}
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/bootstrap.css')}}">
+{% endif %}
+<!-- shortcut icon -->
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<!-- icon -->
 <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+
+<!-- X-Editable -->
+<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
 {% endblock %}
 
 {% block navbar %}
@@ -19,7 +32,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="/">DreaMMoon</a>
+			<a class="navbar-brand" href="/">NubiByte</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">

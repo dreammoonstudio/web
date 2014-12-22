@@ -1,10 +1,20 @@
-from flask import render_template, session, redirect, url_for, current_app
+from flask import render_template, session, redirect, url_for, current_app, abort
 from ..email import send_email
 from . import main
 from .forms import NameForm
 from .. import flash
 from flask.ext.babel import gettext as _
 from app.models.user import User
+from flask.ext.sqlalchemy import get_debug_queries
+
+@main.after_app_request
+def after_request(response):
+    for query in get_debug_queries():
+        if query.duration >= current_app.config['SLOW_DB_QUERY_TIME']:
+            current_app.logger.warning('Slow query: %s\nParameters: %s\nDuration: %f sec\nContext: %s\n' %
+                (query.statement, query.parameters, query.duration, query.context))
+    return response
+
 
 @main.route('/', methods=['GET', 'POST'])
 def index():

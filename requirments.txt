@@ -27,3 +27,5 @@ pytz
 six
 speaklater
 ystockquote
+coverage
+
