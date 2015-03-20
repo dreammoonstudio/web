@@ -4,7 +4,7 @@ from . import main
 from .forms import NameForm
 from .. import flash
 from flask.ext.babel import gettext as _
-from app.models.user import User
+from app.models.user import User, User_Profile
 from flask.ext.sqlalchemy import get_debug_queries
 
 @main.after_app_request
@@ -32,5 +32,6 @@ def user(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
         abort(404)
+
     return render_template('user.html', user=user)
 

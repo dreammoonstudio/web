@@ -49,8 +49,6 @@ class User(db.Model, UserMixin):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
     confirmed = db.Column(db.Boolean, default=False)
-    profile_id = db.Column(db.Integer, db.ForeignKey('user_profiles.id'))
-
     def generate_confirmation_token(self, expiration=3600):
         s = Serializer(current_app.config['SECRET_KEY'], expiration)
         return s.dumps({'confirm': self.id})
@@ -80,7 +78,7 @@ class User(db.Model, UserMixin):
         return check_password_hash(self.password_hash, password)
 
     def get_name(self):
-        name = self.profile.get_name()
+        name = self.get_profile().get_name()
         if name:
             return name
         else:
@@ -98,20 +96,18 @@ class User(db.Model, UserMixin):
 
     def __init__(self, **kwargs):
         super(User, self).__init__(**kwargs)
-        self.update_users()
+        self.update_user()
 
-    def update_users(self, profile=None):
+    def get_profile(self):
+        return User_Profile.query.get(int(self.id))
+
+
+    def update_user(self):
         if self.role is None:
             if self.email == current_app.config['DM_ADMIN']:
                 self.role = Role.query.filter_by(permissions=0xfff).first()
             else:
                 self.role = Role.query.filter_by(default=True).first()
-        if self.profile is None and profile is None:
-            if self.email == current_app.config['DM_ADMIN']:
-                self.role = Role.query.filter_by(permissions=0xfff).first()
-            else:
-                self.role = Role.query.filter_by(default=True).first()
-                
 
 
 class AnonymousUser(AnonymousUserMixin):
@@ -129,16 +125,21 @@ def login_user(user_id):
 class User_Profile(db.Model):
     __tablename__ = 'user_profiles'
     id = db.Column(db.Integer, primary_key=True)
-    users = db.relationship("User", backref="profile", lazy="dynamic");
     first_name = db.Column(db.String(64))
     last_name = db.Column(db.String(64))
     address = db.Column(db.String(128))
     about_me = db.Column(db.Text())
-    memeber_since = db.Column(db.DateTime(), default=datetime.utcnow)
+    member_since = db.Column(db.DateTime(), default=datetime.utcnow)
     last_seen = db.Column(db.DateTime(), default=datetime.utcnow)
     is_male = db.Column(db.Boolean)
     is_single = db.Column(db.Boolean)
     is_married = db.Column(db.Boolean)
+
+    def __init__(self, **kwargs):
+        super(User_Profile, self).__init__(**kwargs)
+
+    def get_user(self):
+        return User.query.get(int(self.id))
 
     def get_name(self):
         # use first name if given

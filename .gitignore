@@ -6,3 +6,6 @@
 *.sqlite
 *
 *.ini
+*.sqlite
+
+data-test.sqlite

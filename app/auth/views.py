@@ -3,7 +3,7 @@ from ..email import send_email
 from app import flash, db
 from flask.ext.login import login_user, login_required, logout_user, current_user
 from . import auth
-from app.models.user import User
+from app.models.user import User, User_Profile
 from .forms import LoginForm, RegisterForm
 from flask.ext.babel import gettext as _
 
@@ -34,7 +34,9 @@ def register():
     if form.validate_on_submit():
         user = User(email=form.email.data, username=form.username.data,
             password=form.password.data)
+        profile = User_Profile(id=user.id)
         db.session.add(user)
+        db.session.add(profile)
         db.session.commit()
         token = user.generate_confirmation_token()
         send_email(user.email, 'Confirm Your Account', 'auth/email/confirm', user=user, token=token)
