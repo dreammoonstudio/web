@@ -5,9 +5,10 @@ config = configparser.RawConfigParser()
 config.read("setting.cfg")
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
+
 class Config:
     SECRET_KEY = config.get('DM', 'SECRET_KEY')
-    
+
     # SQLAlchemy
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
@@ -32,14 +33,17 @@ class Config:
     def init_app(app):
         pass
 
+
 class DevelopmentConfig(Config):
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'data-dev.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + \
+        os.path.join(BASE_DIR, 'data-dev.sqlite')
 
 
 class TestingConfig(Config):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(BASE_DIR, 'data-test.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + \
+        os.path.join(BASE_DIR, 'data-test.sqlite')
 
 
 class ProductionConfig(Config):
@@ -65,7 +69,7 @@ class ProductionConfig(Config):
             subject=cls.DM_MAIL_SUBJECT_PREFIX + " Application Error",
             credentials=credentials,
             secure=secure
-            )
+        )
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
@@ -83,6 +87,6 @@ config = {
 }
 
 LANGUAGES = {
-    'en' : 'English',
-    'zh' : 'Chinese'
+    'en': 'English',
+    'zh': 'Chinese'
 }
