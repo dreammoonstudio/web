@@ -1,8 +1,6 @@
 #!/Library/Frameworks/Python.framework/Versions/3.4/bin/python3
 
-import os
 from app import create_app, db
-#from app.models import User, Role
 from flask.ext.script import Manager, Shell
 from flask.ext.migrate import Migrate, MigrateCommand
 import configparser
