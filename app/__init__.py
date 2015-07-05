@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import flash as f
-from flask.ext.script import Manager
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.moment import Moment
 from flask.ext.sqlalchemy import SQLAlchemy
