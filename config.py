@@ -78,7 +78,7 @@ class AlphaTestConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or \
         'sqlite:///' + os.path.join(BASE_DIR, 'alpha-test.sqlite')
 
-config = {
+configs = {
     'dev': DevelopmentConfig,
     'test': TestingConfig,
     'deploy': ProductionConfig,

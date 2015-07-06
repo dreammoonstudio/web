@@ -1,23 +1,30 @@
-from flask import render_template, session, redirect, url_for, current_app, abort
-from ..email import send_email
+from flask import render_template, session, current_app, abort
 from . import main
 from .forms import NameForm
 from .. import flash
 from flask.ext.babel import gettext as _
-from app.models.user import User, User_Profile
+from app.models.user import User
 from flask.ext.sqlalchemy import get_debug_queries
+
+import configparser
+
 
 @main.after_app_request
 def after_request(response):
     for query in get_debug_queries():
         if query.duration >= current_app.config['SLOW_DB_QUERY_TIME']:
-            current_app.logger.warning('Slow query: %s\nParameters: %s\nDuration: %f sec\nContext: %s\n' %
-                (query.statement, query.parameters, query.duration, query.context))
+            s = 'Slow query: %s\nParameters: %s\n' % (
+                query.statement, query.parameters)
+            s += 'Duration: %f sec\nContext: %s\n' % (
+                query.duration, query.context)
+            current_app.logger.warning(s)
     return response
 
 
 @main.route('/', methods=['GET', 'POST'])
 def index():
+    config = configparser.RawConfigParser()
+    config.read("settings/index.cfg")
     form = NameForm()
     if form.validate_on_submit():
         old_name = session.get('name')
@@ -25,7 +32,19 @@ def index():
             flash(_('Looks like you have changed your name'))
         session['name'] = form.name.data
     form.name.data = ''
-    return render_template('index.html', form=form, name=session.get('name'))
+
+    setting = {
+        "COUNT": int(config.get('INDEX', 'CAROUSEL_SLIDE_COUNT')),
+        "SOURCES": config.get("INDEX", "CAROUSEL_IMG_SOURCES").split(','),
+        "CAPTIONS": config.get("INDEX", "CAROUSEL_CAPTIONS").split(',')
+    }
+
+    print(setting)
+
+    return render_template('index.html',
+                           setting=setting,
+                           form=form, name=session.get('name'))
+
 
 @main.route('/user/<username>')
 def user(username):
@@ -34,4 +53,3 @@ def user(username):
         abort(404)
 
     return render_template('user.html', user=user)
-

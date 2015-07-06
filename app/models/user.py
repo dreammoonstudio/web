@@ -5,6 +5,7 @@ from flask import current_app
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from datetime import datetime
 
+
 class Role(db.Model):
     __tablename__ = 'roles'
     id = db.Column(db.Integer, primary_key=True)
@@ -41,6 +42,7 @@ class Role(db.Model):
     def __repr__(self):
         return '<Role %r>' % self.name
 
+
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
@@ -49,6 +51,7 @@ class User(db.Model, UserMixin):
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     password_hash = db.Column(db.String(128))
     confirmed = db.Column(db.Boolean, default=False)
+
     def generate_confirmation_token(self, expiration=3600):
         s = Serializer(current_app.config['SECRET_KEY'], expiration)
         return s.dumps({'confirm': self.id})
@@ -68,7 +71,6 @@ class User(db.Model, UserMixin):
     @property
     def password(self):
         raise AttributeError('password is not a readable attribute')
-    
 
     @password.setter
     def password(self, password):
@@ -101,7 +103,6 @@ class User(db.Model, UserMixin):
     def get_profile(self):
         return User_Profile.query.get(int(self.id))
 
-
     def update_user(self):
         if self.role is None:
             if self.email == current_app.config['DM_ADMIN']:
@@ -111,16 +112,20 @@ class User(db.Model, UserMixin):
 
 
 class AnonymousUser(AnonymousUserMixin):
+
     def can():
-        return False;
+        return False
 
     def is_admin():
         return False
 
 login_manager.anoymous_user = AnonymousUser
+
+
 @login_manager.user_loader
 def login_user(user_id):
     return User.query.get(int(user_id))
+
 
 class User_Profile(db.Model):
     __tablename__ = 'user_profiles'

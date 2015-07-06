@@ -8,7 +8,7 @@ from flask.ext.babel import Babel
 from flask.ext.login import LoginManager
 from flask.ext.pagedown import PageDown
 from flask_wtf.csrf import CsrfProtect
-from config import config
+from config import configs
 
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -24,8 +24,8 @@ csrf = CsrfProtect()
 
 def create_app(config_name):
     app = Flask(__name__)
-    app.config.from_object(config[config_name])
-    config[config_name].init_app(app)
+    app.config.from_object(configs[config_name])
+    configs[config_name].init_app(app)
     bootstrap.init_app(app)
     mail.init_app(app)
     moment.init_app(app)
