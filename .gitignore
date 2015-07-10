@@ -7,6 +7,6 @@
 *.ini
 
 migrations/**
-*.cfg
+setting.cfg
 
 data-test.sqlite
