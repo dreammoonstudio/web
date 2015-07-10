@@ -4,8 +4,9 @@
 
 # ignore sqlite database files
 *.sqlite
-*
 *.ini
-*.sqlite
+
+migrations/**
+*.cfg
 
 data-test.sqlite

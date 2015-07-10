@@ -32,10 +32,72 @@
 
 {% block page %}
 <div class="page-header">
-
-	<h1>Hello, {% if name %} {{ name }} {% else %} Stranger {% endif %} !</h1>
+	<h1>Space Shooter Game</h1>
+    <p>Download the game for your platform:</p>
+    <a href="{{url_for('static', filename='games/Space_Shooter/Space_Shooter_Win86.zip')}}"><button class="btn btn-primary btn-lg">Windows</button></a>
+    <a href="{{url_for('static', filename='games/Space_Shooter/Space_Shooter_Mac86.zip')}}"><button class="btn btn-primary btn-lg">Mac</button></a>
 </div>
-{{ wtf.quick_form(form) }}
 
+<object id="UnityObject" classid="clsid:444785F1-DE89-4295-863A-D46C3A781394"
+        width="600" height="900"
+        codebase="http://webplayer.unity3d.com/download_webplayer/UnityWebPlayer.cab#version=2,0,0,0">
+ <param name="unity3d" value="WebPlayer.unity3d" />
+ <embed id="UnityEmbed" src="{{url_for('static', filename='games/Space_Shooter/space_shooter.unity3d')}}" width="600" height="900"
+  type="application/vnd.unity" pluginspage="http://www.unity3d.com/unity-web-player-2.x" />
+ </object>
+<style type="text/css">
+    <!--
+    body {
+        font-family: Helvetica, Verdana, Arial, sans-serif;
+        background-color: black;
+        color: white;
+        text-align: center;
+    }
+    a:link, a:visited {
+        color: #bfbfbf;
+    }
+    a:active, a:hover {
+        color: #bfbfbf;
+    }
+    p.header {
+        font-size: small;
+    }
+    p.header span {
+        font-weight: bold;
+    }
+    p.footer {
+        font-size: x-small;
+    }
+    div.content {
+        margin: auto;
+        width: 600px;
+    }
+    div.broken,
+    div.missing {
+        margin: auto;
+        position: relative;
+        top: 50%;
+        width: 193px;
+    }
+    div.broken a,
+    div.missing a {
+        height: 63px;
+        position: relative;
+        top: -31px;
+    }
+    div.broken img,
+    div.missing img {
+        border-width: 0px;
+    }
+    div.broken {
+        display: none;
+    }
+    div#unityPlayer {
+        cursor: default;
+        height: 900px;
+        width: 600px;
+    }
+    -->
+</style>
 
 {% endblock %}
