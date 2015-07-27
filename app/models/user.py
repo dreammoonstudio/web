@@ -113,13 +113,13 @@ class User(db.Model, UserMixin):
 
 class AnonymousUser(AnonymousUserMixin):
 
-    def can():
+    def can(self, permissions):
         return False
 
-    def is_admin():
+    def is_admin(self):
         return False
 
-login_manager.anoymous_user = AnonymousUser
+login_manager.anonymous_user = AnonymousUser
 
 
 @login_manager.user_loader

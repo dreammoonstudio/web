@@ -13,9 +13,9 @@ class Config:
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
 
     # mail
-    DM_MAIL_SUBJECT_PREFIX = '[Nubibyte]'
-    DM_MAIL_SENDER = 'Nubibyte Admin'
-    DM_ADMIN = 'admin@dreammoonstudio.com'
+    MAIL_SUBJECT_PREFIX = '[Nubibyte]'
+    MAIL_SENDER = 'Nubibyte Admin'
+    ADMIN_EMAIL = 'admin@nubibyte.com'
     CREATOR_EMAIL = config.get('DM', 'CREATOR_EMAIL')
 
     MAIL_SERVER = config.get('DM', 'EMAIL_SERVER')
